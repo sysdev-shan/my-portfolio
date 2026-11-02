@@ -1,0 +1,104 @@
+/* animations. content is visible by default; the "js" class (set in the <head> of index.html)
+   is what enables the hidden start state for the scroll reveals. */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+@keyframes wipe {
+  from {
+    background-size: 0% 0.42em;
+  }
+}
+
+@keyframes grow {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+}
+
+/* play once on load */
+.intro {
+  animation: rise 700ms var(--ease-out-expo) both;
+  animation-delay: var(--d, 0ms);
+}
+.hl-wipe {
+  animation: wipe 900ms var(--ease-out-expo) 450ms both;
+}
+.skill-bar {
+  animation: grow 900ms var(--ease-out-expo) 500ms both;
+}
+
+/* scroll reveal (reveal.js adds "is-visible") */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 600ms var(--ease-out-expo), transform 600ms var(--ease-out-expo);
+  transition-delay: var(--d, 0ms);
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* profile photo */
+.photo {
+  transform: rotate(-1deg);
+  box-shadow: var(--shadow-hard-lg);
+}
+.js .photo-reveal {
+  transition: opacity 500ms var(--ease-out-expo), transform 800ms var(--ease-out-expo),
+    box-shadow 800ms var(--ease-out-expo) 160ms;
+}
+.js .photo-reveal:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(32px) rotate(-7deg);
+  box-shadow: 0 0 0 0 var(--color-ink);
+}
+
+/* dialogs */
+dialog[open] {
+  animation: dialog-in 260ms var(--ease-out-expo);
+}
+
+/* no motion if the user turned animations off */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .intro,
+  .hl-wipe,
+  .skill-bar,
+  dialog[open] {
+    animation: none;
+  }
+  .js .reveal,
+  .js .photo-reveal {
+    opacity: 1;
+    transition: none;
+  }
+  .js .reveal {
+    transform: none;
+  }
+  .js .photo-reveal,
+  .js .photo-reveal:not(.is-visible) {
+    opacity: 1;
+    transform: rotate(-1deg);
+    box-shadow: var(--shadow-hard-lg);
+  }
+  .btn,
+  .project,
+  .social-link {
+    transition: none;
+  }
+}

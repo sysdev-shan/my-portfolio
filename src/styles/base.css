@@ -1,0 +1,111 @@
+/* fonts (paths are relative to dist/styles.css) */
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("../assets/fonts/source-serif-4-latin-wght-normal.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("../assets/fonts/source-serif-4-latin-wght-italic.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url("../assets/fonts/hanken-grotesk-latin-wght-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("../assets/fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2");
+  font-weight: 100 800;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--nav-h) + 1rem);
+    scrollbar-color: var(--color-ink) var(--color-paper);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display text-ink;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* tabular numbers */
+  .tnum,
+  output,
+  table {
+    font-variant-numeric: tabular-nums;
+  }
+
+  a:not([class]) {
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+  }
+
+  ::selection {
+    @apply bg-primary text-ink;
+  }
+
+  :focus-visible {
+    outline: var(--border-w) solid var(--color-ink);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .on-ink :focus-visible {
+    outline-color: var(--color-primary);
+  }
+
+  ::-webkit-scrollbar {
+    width: 14px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-paper);
+    box-shadow: inset 3px 0 0 var(--color-ink);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-secondary);
+    border: 3px solid var(--color-ink);
+  }
+
+  .skip-link {
+    @apply absolute left-4 z-[100] -translate-y-24 rounded-md border-[3px] border-ink bg-primary px-4 py-2 font-semibold;
+    top: 1rem;
+  }
+  .skip-link:focus {
+    @apply translate-y-0;
+  }
+
+  dialog {
+    color: var(--color-ink);
+  }
+  dialog::backdrop {
+    background: rgb(22 18 13 / 0.62);
+  }
+}

@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Christian A. Pidlaoan Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Christian A. Pidlaoan, an aspiring software developer who builds small things that work."
+    />
+    <meta name="theme-color" content="#f6f3ea" />
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link rel="preload" href="assets/fonts/source-serif-4-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="dist/styles.css" />
+    <script>
+      // lets the css know js is running
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <!-- icons -->
+    <svg width="0" height="0" class="absolute" aria-hidden="true" focusable="false">
+      <defs>
+        <symbol id="i-star" viewBox="0 0 96 96"><path d="M48 6l12.3 25.2 27.7 4-20 19.6 4.7 27.6L48 68.4 23.3 82.4 28 54.8 8 35.2l27.7-4z" fill="currentColor" stroke="#16120d" stroke-width="5" stroke-linejoin="round"/></symbol>
+        <symbol id="i-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+        <symbol id="i-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+        <symbol id="i-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+        <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 5 7 7-7 7"/><path d="M5 12h14"/></symbol>
+        <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol>
+        <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+        <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+        <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+        <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+      </defs>
+    </svg>
+
+    <!-- navbar -->
+    <header class="sticky top-0 z-50 border-b-[3px] border-ink bg-paper">
+      <nav class="container-page flex h-[var(--nav-h)] items-center justify-between gap-4" aria-label="Primary">
+        <a href="#top" class="flex items-center gap-3 rounded-md" aria-label="Christian A. Pidlaoan, back to top">
+          <span class="grid size-11 place-items-center rounded-md border-[3px] border-ink bg-secondary font-mono text-base font-extrabold shadow-hard-sm">CP</span>
+          <span class="hidden font-display text-xl font-extrabold sm:inline">Christian Pidlaoan</span>
+        </a>
+
+        <ul class="hidden items-center gap-1 md:flex">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="flex items-center gap-3">
+          <a href="#contact" class="btn btn-primary hidden md:inline-flex">Hire me</a>
+          <button
+            type="button"
+            id="menu-toggle"
+            class="icon-btn md:hidden"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Open menu"
+          >
+            <svg class="size-6" data-icon="menu" aria-hidden="true"><use href="#i-menu" /></svg>
+          </button>
+        </div>
+      </nav>
+
+      <div id="mobile-menu" class="hidden border-t-[3px] border-ink bg-paper-2 md:hidden">
+        <ul class="container-page flex flex-col gap-3 py-5">
+          <li><a href="#about" class="btn btn-outline w-full">About</a></li>
+          <li><a href="#projects" class="btn btn-outline w-full">Projects</a></li>
+          <li><a href="#skills" class="btn btn-outline w-full">Skills</a></li>
+          <li><a href="#contact" class="btn btn-primary w-full">Hire me</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- hero -->
+      <section id="top" class="relative overflow-x-clip">
+        <div class="container-page grid grid-cols-[minmax(0,1fr)] gap-14 py-14 sm:py-20 lg:grid-cols-12 lg:items-start lg:gap-x-12 lg:py-24">
+          <div class="flex flex-col gap-7 lg:col-span-6">
+            <h1 class="intro text-[clamp(2.75rem,6.2vw,4.75rem)] leading-[1.02]" style="--d: 0ms">
+              Christian builds <span class="hl hl-wipe">small things</span> that work.
+            </h1>
+            <p class="lede intro max-w-[34rem] text-muted" style="--d: 120ms">
+              I'm Christian A. Pidlaoan, an aspiring software developer. I write HTML, CSS and JavaScript by hand, ship small projects, and keep notes on what broke.
+            </p>
+
+            <div class="intro" style="--d: 220ms">
+              <div class="copybox">
+                <code data-copy-source><i aria-hidden="true">$</i>pidlaoanchristian2@gmail.com</code>
+                <button type="button" id="copy-email">Copy</button>
+              </div>
+            </div>
+
+            <div class="intro flex flex-wrap gap-4" style="--d: 300ms">
+              <a href="#projects" class="btn btn-primary">See my projects</a>
+              <a href="assets/docs/christian-pidlaoan-resume.pdf" download class="btn btn-outline">
+                <svg aria-hidden="true"><use href="#i-download" /></svg>
+                Download CV
+              </a>
+            </div>
+
+            <p class="intro flex items-center gap-2.5 text-[0.9375rem] text-muted" style="--d: 380ms">
+              <span class="inline-block size-2.5 rounded-full border-2 border-ink bg-secondary" aria-hidden="true"></span>
+              Open to work and internship.
+            </p>
+          </div>
+
+          <!-- skills panel (src/js/skills.js) -->
+          <figure class="intro relative lg:col-span-6" style="--d: 180ms">
+            <svg class="sticker -right-3 -top-9 z-20 size-16 rotate-12 text-primary sm:-right-5 sm:size-20" viewBox="0 0 96 96" aria-hidden="true"><use href="#i-star" /></svg>
+
+            <div class="panel relative z-10 p-5 sm:p-7">
+              <div class="flex items-center justify-between gap-3 border-b-2 border-ink pb-3 font-mono text-[0.8125rem]">
+                <span class="font-semibold">skills.js</span>
+                <span class="flex items-center gap-2"><i class="inline-block size-2.5 rounded-full bg-secondary" aria-hidden="true"></i>Skills Used</span>
+              </div>
+
+              <ul class="mt-4 space-y-1">
+                <li>
+                  <button type="button" class="skill-row" style="--level: 80%" aria-pressed="false" data-note="HTML: I build every page of this site by hand.">
+                    <span>HTML</span><span class="skill-track"><span class="skill-bar"></span></span><span class="skill-pct">80%</span>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="skill-row" style="--level: 70%" aria-pressed="false" data-note="CSS: layouts, colours and animations, with Tailwind.">
+                    <span>CSS</span><span class="skill-track"><span class="skill-bar"></span></span><span class="skill-pct">70%</span>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="skill-row" style="--level: 60%" aria-pressed="false" data-note="JavaScript: menus, forms and pop-ups for this site.">
+                    <span>JavaScript</span><span class="skill-track"><span class="skill-bar"></span></span><span class="skill-pct">60%</span>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="skill-row" style="--level: 50%" aria-pressed="false" data-note="Python: small command-line programs, like a quiz game.">
+                    <span>Python</span><span class="skill-track"><span class="skill-bar"></span></span><span class="skill-pct">50%</span>
+                  </button>
+                </li>
+              </ul>
+
+              <p id="skill-note" class="mt-5 min-h-[3.5rem] border-t-2 border-ink pt-4 font-display text-lg leading-snug" aria-live="polite"></p>
+            </div>
+
+            <figcaption class="caption mt-5 max-w-[34rem]">
+              Click a skill to read a note. The percentages are skills data <code class="font-mono">index.html</code>.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- about -->
+      <section id="about" class="relative overflow-x-clip border-t-[3px] border-ink py-20 lg:py-28">
+        <div class="container-page grid items-start gap-12 lg:grid-cols-12 lg:gap-x-16">
+          <div class="lg:col-span-7">
+            <h2 class="section-title">About me</h2>
+            <p class="lede mt-8 max-w-[34rem]">
+              I like taking an idea from a rough sketch to something people can click.
+            </p>
+            <div class="prose-body mt-6 space-y-5 text-muted">
+              <p>
+                I'm building my skills through hands-on projects: writing HTML and CSS by hand, adding behaviour with JavaScript, and learning how real software gets planned, tested and shipped.
+              </p>
+            </div>
+
+            <dl class="mt-10 max-w-[34rem] border-y-[3px] border-ink font-mono text-[0.9375rem]">
+              <div class="flex gap-4 py-3"><dt class="w-28 shrink-0 text-muted">Focus</dt><dd class="font-semibold">Software Developer</dd></div>
+              <div class="flex gap-4 border-t-2 border-ink py-3"><dt class="w-28 shrink-0 text-muted">Learning</dt><dd class="font-semibold">JavaScript, Python, C++, Rust, Java</dd></div>
+              <div class="flex gap-4 border-t-2 border-ink py-3"><dt class="w-28 shrink-0 text-muted">Location</dt><dd class="font-semibold">Matumbo, Pusok Lapu-Lapu City, Cebu City, Philippines, 6015</dd></div>
+              <div class="flex gap-4 border-t-2 border-ink py-3"><dt class="w-28 shrink-0 text-muted">Status</dt><dd class="font-semibold">Open to work and internships</dd></div>
+            </dl>
+          </div>
+
+          <figure class="relative mx-auto w-full max-w-sm lg:col-span-5 lg:mx-0 lg:justify-self-end">
+            <img src="assets/images/profile.png" alt="Portrait of Christian A. Pidlaoan" width="400" height="500" class="photo photo-reveal relative z-10 aspect-[4/5] w-full rounded-md border-[3px] border-ink bg-ice object-cover" />
+            <figcaption class="caption mt-5">Christian A. Pidlaoan.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- projects -->
+      <section id="projects" class="relative overflow-x-clip border-t-[3px] border-ink bg-paper-2 py-20 lg:py-28">
+        <div class="container-page">
+          <div class="flex flex-wrap items-end justify-between gap-6">
+            <h2 class="section-title">Projects</h2>
+            <p class="max-w-md text-muted">Three things I built. Click a screenshot to enlarge it.</p>
+          </div>
+
+          <div class="mt-12 grid gap-6 lg:grid-cols-3">
+
+            <article class="project reveal" style="--d: 0ms">
+              <div class="slider" data-slider aria-roledescription="carousel" aria-label="BNHS Learning Portal screenshots">
+                <button type="button" class="slider-stage" aria-label="Enlarge screenshot" title="Click to enlarge">
+                  <img class="slide" src="assets/images/projects/bnhs-home.png" alt="Student home page with the current lesson, library stats, announcements and recent files" data-caption="Home" width="1440" height="900" />
+                  <img class="slide" loading="lazy" src="assets/images/projects/bnhs-library.png" alt="Learning library with a term, week and lesson picker" data-caption="Library" width="1440" height="900" />
+                  <img class="slide" loading="lazy" src="assets/images/projects/bnhs-leaderboard.png" alt="Leaderboard page with a find-a-score search" data-caption="Leaderboard" width="1440" height="900" />
+                  <img class="slide" loading="lazy" src="assets/images/projects/bnhs-teacher-login.png" alt="Teacher sign-in form" data-caption="Teacher sign in" width="1440" height="900" />
+                </button>
+                <div class="slider-bar">
+                  <button type="button" class="slider-btn slider-prev" aria-label="Previous screenshot"><svg aria-hidden="true"><use href="#i-arrow-left" /></svg></button>
+                  <p class="slider-count" aria-live="polite"></p>
+                  <button type="button" class="slider-btn slider-next" aria-label="Next screenshot"><svg aria-hidden="true"><use href="#i-arrow-right" /></svg></button>
+                </div>
+              </div>
+              <div class="flex flex-1 flex-col gap-3 p-5">
+                <div class="flex items-start justify-between gap-3">
+                  <h3 class="text-2xl leading-tight">BNHS Learning Portal</h3>
+                  <span class="chip chip-sheet shrink-0">Private repo</span>
+                </div>
+                <p class="text-muted">School portal where students view lessons, announcements and scores and teachers manage content. Runs offline on the school network.</p>
+                <ul class="flex flex-wrap gap-2" aria-label="Technologies">
+                  <li class="chip chip-lime">React</li>
+                  <li class="chip chip-pink">Fastify</li>
+                  <li class="chip chip-sky">SQLite</li>
+                </ul>
+                <button type="button" class="btn btn-primary mt-auto self-start" data-project="0">
+                  View details
+                  <svg aria-hidden="true"><use href="#i-arrow-up-right" /></svg>
+                </button>
+              </div>
+            </article>
+
+            <article class="project reveal" style="--d: 80ms">
+              <div class="slider" data-slider aria-roledescription="carousel" aria-label="Rent a Room PH screenshots">
+                <button type="button" class="slider-stage" aria-label="Enlarge screenshot" title="Click to enlarge">
+                  <img class="slide" src="assets/images/projects/rent-a-room-dashboard.png" alt="Dashboard with occupancy stats, bills summary, recent activity and active units" data-caption="Dashboard" width="1415" height="1600" />
+                  <img class="slide" loading="lazy" src="assets/images/projects/rent-a-room-rooms.png" alt="Room management table with tenants, status and rent" data-caption="Rooms" width="1315" height="1600" />
+                  <img class="slide" loading="lazy" src="assets/images/projects/rent-a-room-payments.png" alt="Payments dashboard with the billing cycle and payment history" data-caption="Payments" width="1581" height="1600" />
+                </button>
+                <div class="slider-bar">
+                  <button type="button" class="slider-btn slider-prev" aria-label="Previous screenshot"><svg aria-hidden="true"><use href="#i-arrow-left" /></svg></button>
+                  <p class="slider-count" aria-live="polite"></p>
+                  <button type="button" class="slider-btn slider-next" aria-label="Next screenshot"><svg aria-hidden="true"><use href="#i-arrow-right" /></svg></button>
+                </div>
+              </div>
+              <div class="flex flex-1 flex-col gap-3 p-5">
+                <div class="flex items-start justify-between gap-3">
+                  <h3 class="text-2xl leading-tight">Rent a Room PH</h3>
+                  <span class="chip chip-sheet shrink-0">Public repo</span>
+                </div>
+                <p class="text-muted">Dashboard for managing rooms, tenants and payments.</p>
+                <ul class="flex flex-wrap gap-2" aria-label="Technologies">
+                  <li class="chip chip-lime">React</li>
+                  <li class="chip chip-pink">Firebase</li>
+                </ul>
+                <button type="button" class="btn btn-primary mt-auto self-start" data-project="1">
+                  View details
+                  <svg aria-hidden="true"><use href="#i-arrow-up-right" /></svg>
+                </button>
+              </div>
+            </article>
+
+            <article class="project reveal" style="--d: 160ms">
+              <div class="slider" data-slider aria-roledescription="carousel" aria-label="RAW Reader screenshots">
+                <button type="button" class="slider-stage" aria-label="Enlarge screenshot" title="Click to enlarge">
+                  <img class="slide" src="assets/images/projects/raw-library.png" alt="Library screen with series cards and unread counts" data-caption="Library" width="840" height="1600" />
+                  <img class="slide" loading="lazy" src="assets/images/projects/raw-browse.png" alt="Browse screen listing the sources" data-caption="Browse" width="840" height="1600" />
+                  <img class="slide" loading="lazy" src="assets/images/projects/raw-reader.png" alt="Reader screen with a page slider and chapter buttons" data-caption="Reader" width="840" height="1600" />
+                </button>
+                <div class="slider-bar">
+                  <button type="button" class="slider-btn slider-prev" aria-label="Previous screenshot"><svg aria-hidden="true"><use href="#i-arrow-left" /></svg></button>
+                  <p class="slider-count" aria-live="polite"></p>
+                  <button type="button" class="slider-btn slider-next" aria-label="Next screenshot"><svg aria-hidden="true"><use href="#i-arrow-right" /></svg></button>
+                </div>
+              </div>
+              <div class="flex flex-1 flex-col gap-3 p-5">
+                <div class="flex items-start justify-between gap-3">
+                  <h3 class="text-2xl leading-tight">RAW Reader</h3>
+                  <span class="chip chip-sheet shrink-0">Public repo</span>
+                </div>
+                <p class="text-muted">A lightweight 3 MB Windows reader for manhwa and manga with a library, resume and multiple sources.</p>
+                <ul class="flex flex-wrap gap-2" aria-label="Technologies">
+                  <li class="chip chip-lime">Tauri</li>
+                  <li class="chip chip-pink">Rust</li>
+                  <li class="chip chip-sky">JavaScript</li>
+                </ul>
+                <button type="button" class="btn btn-primary mt-auto self-start" data-project="2">
+                  View details
+                  <svg aria-hidden="true"><use href="#i-arrow-up-right" /></svg>
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- skills -->
+      <section id="skills" class="relative overflow-x-clip border-y-[3px] border-ink bg-primary py-20 lg:py-28">
+        <div class="container-page">
+          <div class="flex flex-wrap items-end justify-between gap-6">
+            <h2 class="section-title">Skills</h2>
+            <p class="max-w-md">Skills I Learned Through Experience</p>
+          </div>
+
+          <figure class="reveal mt-12">
+            <div class="panel overflow-hidden">
+              <table class="skills-table">
+                <caption class="sr-only">Skills grouped by area</caption>
+                <thead class="sr-only"><tr><th scope="col">Area</th><th scope="col">Skills</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Languages</th>
+                    <td><ul class="flex flex-wrap gap-2.5"><li class="chip chip-lime">HTML</li><li class="chip chip-pink">CSS</li><li class="chip chip-sky">JavaScript</li><li class="chip chip-sky">Python</li><li class="chip chip-sky">C++</li><li class="chip chip-sky">Rust</li><li class="chip chip-sheet">Java</li></ul></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Frameworks</th>
+                    <td><ul class="flex flex-wrap gap-2.5"><li class="chip chip-lime">React</li><li class="chip chip-lime">Next.js</li><li class="chip chip-pink">Node.js</li><li class="chip chip-sky">Tailwind CSS</li></ul></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Tools</th>
+                    <td><ul class="flex flex-wrap gap-2.5"><li class="chip chip-lime">Git</li><li class="chip chip-pink">GitHub</li><li class="chip chip-sky">Figma</li><li class="chip chip-sheet">VS Code</li></ul></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <figcaption class="caption mt-5 text-ink">Tools and languages I work with.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- contact -->
+      <section id="contact" class="relative overflow-x-clip py-20 lg:py-28">
+        <div class="container-page grid gap-12 lg:grid-cols-12 lg:gap-x-16">
+          <div class="lg:col-span-5">
+            <h2 class="section-title">Let's work together</h2>
+            <p class="lede mt-8">
+              Got an internship, a project, or just a question? Send a message and I'll reply as soon as I can.
+            </p>
+            <ul class="mt-8 flex flex-wrap gap-4">
+              <li>
+                <a href="https://github.com/sysdev-shan" class="social-link" target="_blank" rel="noopener noreferrer">
+                  <svg aria-hidden="true"><use href="#i-github" /></svg>GitHub<span class="sr-only"> (opens in a new tab)</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/christian-pidlaoan-7ba35b338/" class="social-link" target="_blank" rel="noopener noreferrer">
+                  <svg aria-hidden="true"><use href="#i-linkedin" /></svg>LinkedIn<span class="sr-only"> (opens in a new tab)</span>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:pidlaoanchristian2@gmail.com" class="social-link">
+                  <svg aria-hidden="true"><use href="#i-mail" /></svg>Email
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <form id="contact-form" class="panel p-6 sm:p-8 lg:col-span-7" novalidate>
+            <div>
+              <label for="name" class="field-label">Your name</label>
+              <input id="name" name="name" type="text" class="field" autocomplete="name" aria-describedby="name-error" required />
+              <p id="name-error" class="field-error" role="alert"></p>
+            </div>
+            <div class="mt-2">
+              <label for="email" class="field-label">Email address</label>
+              <input id="email" name="email" type="email" class="field" autocomplete="email" inputmode="email" aria-describedby="email-error" required />
+              <p id="email-error" class="field-error" role="alert"></p>
+            </div>
+            <div class="mt-2">
+              <label for="message" class="field-label">Message</label>
+              <textarea id="message" name="message" rows="5" class="field resize-y" aria-describedby="message-error" required></textarea>
+              <p id="message-error" class="field-error" role="alert"></p>
+            </div>
+            <button type="submit" class="btn btn-primary mt-4 w-full sm:w-auto">
+              Send message
+              <svg aria-hidden="true"><use href="#i-send" /></svg>
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="on-ink border-t-[3px] border-ink bg-ink text-paper">
+      <div class="container-page flex flex-wrap items-center justify-between gap-4 py-8">
+        <p class="text-base">&copy; <span id="year">2026</span> Christian A. Pidlaoan. Built by hand with HTML, Tailwind and JavaScript.</p>
+        <a href="#top" class="btn btn-primary">
+          <svg aria-hidden="true"><use href="#i-arrow-up" /></svg>
+          Back to top
+        </a>
+      </div>
+    </footer>
+
+    <!-- dialogs -->
+    <dialog id="project-modal" class="m-auto w-[min(34rem,calc(100%-2.5rem))] rounded-md border-[3px] border-ink bg-sheet p-0 shadow-hard-lg" aria-labelledby="project-title">
+      <div class="flex items-start justify-between gap-4 border-b-[3px] border-ink bg-primary p-5">
+        <h2 id="project-title" class="text-2xl leading-tight"></h2>
+        <button type="button" class="icon-btn shrink-0 bg-sheet" data-close aria-label="Close project details">
+          <svg class="size-6" aria-hidden="true"><use href="#i-x" /></svg>
+        </button>
+      </div>
+      <div class="space-y-5 p-6">
+        <p id="project-desc" class="text-muted"></p>
+        <ul id="project-tags" class="flex flex-wrap gap-2" aria-label="Technologies"></ul>
+        <div class="flex flex-wrap gap-3">
+          <a id="project-live" href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Live demo<svg aria-hidden="true"><use href="#i-arrow-up-right" /></svg></a>
+          <a id="project-code" href="#" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Source code<svg aria-hidden="true"><use href="#i-github" /></svg></a>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="zoom-modal" class="m-auto w-[min(72rem,calc(100%-1.5rem))] rounded-md border-[3px] border-ink bg-sheet p-0 shadow-hard-lg" aria-labelledby="zoom-title">
+      <div class="flex items-center justify-between gap-4 border-b-[3px] border-ink bg-primary px-5 py-3">
+        <h2 id="zoom-title" class="text-xl leading-tight"></h2>
+        <button type="button" class="icon-btn shrink-0 bg-sheet" data-close aria-label="Close enlarged screenshot">
+          <svg class="size-6" aria-hidden="true"><use href="#i-x" /></svg>
+        </button>
+      </div>
+      <div class="flex justify-center overflow-auto bg-paper-2 p-4">
+        <img id="zoom-img" class="block h-auto max-h-[75dvh] w-auto max-w-full border-[3px] border-ink bg-sheet" alt="" />
+      </div>
+    </dialog>
+
+    <dialog id="success-modal" class="m-auto w-[min(28rem,calc(100%-2.5rem))] rounded-md border-[3px] border-ink bg-sheet p-0 shadow-hard-lg" aria-labelledby="success-title">
+      <div class="space-y-4 p-7">
+        <h2 id="success-title" class="text-3xl">Message sent</h2>
+        <p class="text-muted">Thanks, <span id="success-name"></span>. I'll get back to you soon.</p>
+        <button type="button" class="btn btn-primary" data-close>Close</button>
+      </div>
+    </dialog>
+  
+    <script src="src/js/page.js" defer></script>
+    <script src="src/js/menu.js" defer></script>
+    <script src="src/js/reveal.js" defer></script>
+    <script src="src/js/skills.js" defer></script>
+    <script src="src/js/copy.js" defer></script>
+    <script src="src/js/slider.js" defer></script>
+    <script src="src/js/projects.js" defer></script>
+    <script src="src/js/form.js" defer></script>
+  </body>
+</html>

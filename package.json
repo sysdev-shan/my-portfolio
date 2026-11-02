@@ -1,0 +1,14 @@
+{
+  "name": "christian-pidlaoan-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio of Christian A. Pidlaoan",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/styles/input.css -o ./dist/styles.css --watch",
+    "build": "tailwindcss -i ./src/styles/input.css -o ./dist/styles.css --minify"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

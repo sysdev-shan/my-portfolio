@@ -33,7 +33,7 @@
 
   /* chips */
   .chip {
-    @apply inline-flex items-center rounded-[4px] border-2 border-ink px-2.5 py-0.5 font-mono text-[0.8125rem] font-semibold leading-6 text-ink;
+    @apply inline-flex items-center rounded-[4px] border-2 border-ink px-2.5 py-0.5 tabular-nums text-[0.8125rem] font-semibold leading-6 text-ink;
   }
   .chip-lime {
     @apply bg-primary;
@@ -66,12 +66,11 @@
 
   /* text helpers */
   .hl {
-    background-image: linear-gradient(var(--color-primary), var(--color-primary));
-    background-repeat: no-repeat;
-    background-position: 0 88%;
-    background-size: 100% 0.42em;
-    padding-inline: 0.06em;
-    box-decoration-break: clone;
+    text-decoration: underline;
+    text-decoration-color: var(--color-primary);
+    text-decoration-thickness: 0.36em;
+    text-decoration-skip-ink: none;
+    text-underline-offset: -0.17em;
   }
   .lede {
     @apply font-display text-[1.375rem] leading-[1.5] sm:text-[1.5rem];
@@ -90,29 +89,36 @@
     @apply flex max-w-[30rem] items-stretch overflow-hidden rounded-md border-[3px] border-ink bg-sheet shadow-hard-sm;
   }
   .copybox code {
-    @apply min-w-0 flex-1 truncate px-4 py-3 font-mono text-[0.9375rem] font-medium;
+    font-family: inherit;
+    @apply min-w-0 flex-1 truncate px-4 py-3 tabular-nums text-[0.9375rem] font-medium;
   }
   .copybox code i {
     @apply mr-2 text-rust not-italic;
   }
-  .copybox button {
-    @apply min-h-12 cursor-pointer border-l-[3px] border-ink bg-paper-2 px-5 font-sans text-[0.9375rem] font-extrabold;
+  .copybox a {
+    @apply flex min-h-12 items-center cursor-pointer border-l-[3px] border-ink bg-paper-2 px-5 font-sans text-[0.9375rem] font-extrabold;
   }
-  .copybox button:hover {
+  .copybox a:hover {
     @apply bg-primary;
   }
 
   /* skill bars */
   .skill-row {
-    @apply grid w-full cursor-pointer items-center gap-3 rounded-md border-[3px] border-transparent px-3 py-3 text-left font-sans font-extrabold;
+    @apply list-none grid w-full cursor-pointer items-center gap-3 rounded-md border-[3px] border-transparent px-3 py-3 text-left font-sans font-extrabold;
     grid-template-columns: 5.5rem 1fr 3rem;
     transition: background-color 160ms, border-color 160ms;
   }
   .skill-row:hover {
     @apply border-ink;
   }
-  .skill-row[aria-pressed="true"] {
+  .skill[open] > .skill-row {
     @apply border-ink bg-primary;
+  }
+  .skill-row::-webkit-details-marker {
+    display: none;
+  }
+  .skill-note {
+    @apply px-3 pb-3 pt-2 font-display text-lg leading-snug;
   }
   .skill-track {
     @apply h-4 overflow-hidden rounded-[4px] border-[3px] border-ink bg-sheet;
@@ -122,7 +128,7 @@
     width: var(--level); /* set inline in index.html */
   }
   .skill-pct {
-    @apply text-right font-mono text-sm;
+    @apply text-right tabular-nums text-sm;
   }
 
   /* project cards: slider on top, text below */
@@ -132,31 +138,19 @@
   .slider {
     @apply border-b-[3px] border-ink bg-paper-2;
   }
-  .slider-stage {
-    @apply flex h-60 w-full cursor-zoom-in items-center justify-center p-4;
+  .slider-track {
+    @apply flex snap-x snap-mandatory overflow-x-auto;
+    scrollbar-width: thin;
+  }
+  .slide-link {
+    @apply flex h-60 w-full shrink-0 cursor-zoom-in snap-center items-center justify-center p-4;
   }
   /* screenshots shrink to fit, never crop */
   .slide {
     @apply h-auto w-auto max-h-full max-w-full border-[3px] border-ink bg-sheet;
   }
-  .slider-bar {
-    @apply flex items-center justify-between gap-2 border-t-[3px] border-ink bg-sheet px-2 py-2;
-  }
-  .slider-btn {
-    @apply inline-flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-md border-[3px] border-ink bg-primary shadow-hard-sm;
-    transition: transform 160ms var(--ease-out-expo), box-shadow 160ms var(--ease-out-expo);
-  }
-  .slider-btn:hover {
-    @apply -translate-x-0.5 -translate-y-0.5 shadow-hard;
-  }
-  .slider-btn:active {
-    @apply translate-x-[3px] translate-y-[3px] shadow-none;
-  }
-  .slider-btn svg {
-    @apply size-5;
-  }
-  .slider-count {
-    @apply text-center font-mono text-sm font-semibold;
+  .slider-hint {
+    @apply border-t-[3px] border-ink bg-sheet px-4 py-2 text-center text-sm font-semibold text-muted;
   }
 
   /* skills table */
@@ -189,10 +183,6 @@
     border-color: var(--color-error);
     background-color: #fff0ee;
   }
-  .field-error {
-    @apply mt-1.5 min-h-6 text-[0.9375rem] font-semibold leading-6;
-    color: var(--color-error);
-  }
 
   /* social links, star sticker */
   .social-link {
@@ -207,5 +197,14 @@
   }
   .sticker {
     @apply pointer-events-none absolute;
+  }
+
+  /* footer links */
+  .footer-link {
+    @apply inline-flex min-h-11 items-center text-base font-semibold text-paper/85 underline decoration-transparent decoration-2 underline-offset-4;
+    transition: color 160ms, text-decoration-color 160ms;
+  }
+  .footer-link:hover {
+    @apply text-primary decoration-primary;
   }
 }

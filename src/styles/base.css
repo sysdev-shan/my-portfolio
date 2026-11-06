@@ -22,19 +22,18 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: "JetBrains Mono";
-  src: url("../assets/fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2");
-  font-weight: 100 800;
-  font-display: swap;
-}
-
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: calc(var(--nav-h) + 1rem);
+    scroll-padding-top: 8rem;
     scrollbar-color: var(--color-ink) var(--color-paper);
     -webkit-text-size-adjust: 100%;
+  }
+
+  @media (min-width: 48rem) {
+    html {
+      scroll-padding-top: calc(var(--nav-h) + 1rem);
+    }
   }
 
   body {
@@ -87,7 +86,7 @@
   }
   ::-webkit-scrollbar-track {
     background: var(--color-paper);
-    box-shadow: inset 3px 0 0 var(--color-ink);
+    border-left: 3px solid var(--color-ink);
   }
   ::-webkit-scrollbar-thumb {
     background: var(--color-secondary);
@@ -102,10 +101,4 @@
     @apply translate-y-0;
   }
 
-  dialog {
-    color: var(--color-ink);
-  }
-  dialog::backdrop {
-    background: rgb(22 18 13 / 0.62);
-  }
 }

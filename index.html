@@ -13,10 +13,6 @@
     <link rel="preload" href="assets/fonts/source-serif-4-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="assets/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="dist/styles.css" />
-    <script>
-      // lets the css know js is running
-      document.documentElement.classList.add("js");
-    </script>
   </head>
 
   <body>
@@ -44,58 +40,48 @@
     <header class="sticky top-0 z-50 border-b-[3px] border-ink bg-paper">
       <nav class="container-page flex h-[var(--nav-h)] items-center justify-between gap-4" aria-label="Primary">
         <a href="#top" class="flex items-center gap-3 rounded-md" aria-label="Christian A. Pidlaoan, back to top">
-          <span class="grid size-11 place-items-center rounded-md border-[3px] border-ink bg-secondary font-mono text-base font-extrabold shadow-hard-sm">CP</span>
+          <span class="grid size-11 place-items-center rounded-md border-[3px] border-ink bg-secondary tabular-nums text-base font-extrabold shadow-hard-sm">CP</span>
           <span class="hidden font-display text-xl font-extrabold sm:inline">Christian Pidlaoan</span>
         </a>
 
         <ul class="hidden items-center gap-1 md:flex">
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
 
         <div class="flex items-center gap-3">
-          <a href="#contact" class="btn btn-primary hidden md:inline-flex">Hire me</a>
-          <button
-            type="button"
-            id="menu-toggle"
-            class="icon-btn md:hidden"
-            aria-expanded="false"
-            aria-controls="mobile-menu"
-            aria-label="Open menu"
-          >
-            <svg class="size-6" data-icon="menu" aria-hidden="true"><use href="#i-menu" /></svg>
-          </button>
+          <a href="#contact" class="btn btn-primary">Hire me</a>
         </div>
       </nav>
 
-      <div id="mobile-menu" class="hidden border-t-[3px] border-ink bg-paper-2 md:hidden">
-        <ul class="container-page flex flex-col gap-3 py-5">
-          <li><a href="#about" class="btn btn-outline w-full">About</a></li>
-          <li><a href="#projects" class="btn btn-outline w-full">Projects</a></li>
-          <li><a href="#skills" class="btn btn-outline w-full">Skills</a></li>
-          <li><a href="#contact" class="btn btn-primary w-full">Hire me</a></li>
-        </ul>
-      </div>
+      <ul class="flex justify-between gap-1 overflow-x-auto border-t-[3px] border-ink bg-paper-2 px-5 py-2 md:hidden" aria-label="Sections">
+        <li><a href="#about" class="nav-link !px-1.5 text-sm">About</a></li>
+        <li><a href="#projects" class="nav-link !px-1.5 text-sm">Projects</a></li>
+        <li><a href="#experience" class="nav-link !px-1.5 text-sm">Experience</a></li>
+        <li><a href="#skills" class="nav-link !px-1.5 text-sm">Skills</a></li>
+        <li><a href="#contact" class="nav-link !px-1.5 text-sm">Contact</a></li>
+      </ul>
     </header>
 
     <main id="main">
       <!-- hero -->
       <section id="top" class="relative overflow-x-clip">
         <div class="container-page grid grid-cols-[minmax(0,1fr)] gap-14 py-14 sm:py-20 lg:grid-cols-12 lg:items-start lg:gap-x-12 lg:py-24">
-          <div class="flex flex-col gap-7 lg:col-span-6">
-            <h1 class="intro text-[clamp(2.75rem,6.2vw,4.75rem)] leading-[1.02]" style="--d: 0ms">
-              Christian builds <span class="hl hl-wipe">small things</span> that work.
+          <div class="flex flex-col gap-7 lg:col-span-7">
+            <h1 class="intro text-[clamp(2.25rem,5.2vw,4.5rem)] leading-[1.02]" style="--d: 0ms">
+              Christian builds <span class="hl hl-wipe">small things.</span>
             </h1>
             <p class="lede intro max-w-[34rem] text-muted" style="--d: 120ms">
-              I'm Christian A. Pidlaoan, an aspiring software developer. I write HTML, CSS and JavaScript by hand, ship small projects, and keep notes on what broke.
+              I'm Christian A. Pidlaoan, an aspiring software developer. I build small websites and apps with HTML, CSS and JavaScript.
             </p>
 
             <div class="intro" style="--d: 220ms">
               <div class="copybox">
-                <code data-copy-source><i aria-hidden="true">$</i>pidlaoanchristian2@gmail.com</code>
-                <button type="button" id="copy-email">Copy</button>
+                <code><i aria-hidden="true">$</i>pidlaoanchristian2@gmail.com</code>
+                <a href="mailto:pidlaoanchristian2@gmail.com">Email</a>
               </div>
             </div>
 
@@ -108,50 +94,16 @@
             </div>
 
             <p class="intro flex items-center gap-2.5 text-[0.9375rem] text-muted" style="--d: 380ms">
-              <span class="inline-block size-2.5 rounded-full border-2 border-ink bg-secondary" aria-hidden="true"></span>
+              <span class="pulse-dot inline-block size-2.5 rounded-full border-2 border-ink bg-secondary" aria-hidden="true"></span>
               Open to work and internship.
             </p>
           </div>
 
-          <!-- skills panel (src/js/skills.js) -->
-          <figure class="intro relative lg:col-span-6" style="--d: 180ms">
-            <svg class="sticker -right-3 -top-9 z-20 size-16 rotate-12 text-primary sm:-right-5 sm:size-20" viewBox="0 0 96 96" aria-hidden="true"><use href="#i-star" /></svg>
-
-            <div class="panel relative z-10 p-5 sm:p-7">
-              <div class="flex items-center justify-between gap-3 border-b-2 border-ink pb-3 font-mono text-[0.8125rem]">
-                <span class="font-semibold">skills.js</span>
-                <span class="flex items-center gap-2"><i class="inline-block size-2.5 rounded-full bg-secondary" aria-hidden="true"></i>Skills Used</span>
-              </div>
-
-              <ul class="mt-4 space-y-1">
-                <li>
-                  <button type="button" class="skill-row" style="--level: 80%" aria-pressed="false" data-note="HTML: I build every page of this site by hand.">
-                    <span>HTML</span><span class="skill-track"><span class="skill-bar"></span></span><span class="skill-pct">80%</span>
-                  </button>
-                </li>
-                <li>
-                  <button type="button" class="skill-row" style="--level: 70%" aria-pressed="false" data-note="CSS: layouts, colours and animations, with Tailwind.">
-                    <span>CSS</span><span class="skill-track"><span class="skill-bar"></span></span><span class="skill-pct">70%</span>
-                  </button>
-                </li>
-                <li>
-                  <button type="button" class="skill-row" style="--level: 60%" aria-pressed="false" data-note="JavaScript: menus, forms and pop-ups for this site.">
-                    <span>JavaScript</span><span class="skill-track"><span class="skill-bar"></span></span><span class="skill-pct">60%</span>
-                  </button>
-                </li>
-                <li>
-                  <button type="button" class="skill-row" style="--level: 50%" aria-pressed="false" data-note="Python: small command-line programs, like a quiz game.">
-                    <span>Python</span><span class="skill-track"><span class="skill-bar"></span></span><span class="skill-pct">50%</span>
-                  </button>
-                </li>
-              </ul>
-
-              <p id="skill-note" class="mt-5 min-h-[3.5rem] border-t-2 border-ink pt-4 font-display text-lg leading-snug" aria-live="polite"></p>
+          <figure class="intro relative mx-auto w-full max-w-md lg:col-span-5 lg:mx-0 lg:justify-self-end" style="--d: 180ms">
+            <div class="float">
+              <img src="assets/images/profile.png" alt="Portrait of Christian A. Pidlaoan" width="400" height="500" class="photo-reveal relative aspect-[4/5] w-full rounded-md border-[3px] border-ink bg-ice object-cover" />
             </div>
-
-            <figcaption class="caption mt-5 max-w-[34rem]">
-              Click a skill to read a note. The percentages are skills data <code class="font-mono">index.html</code>.
-            </figcaption>
+            <figcaption class="caption mt-5">Christian A. Pidlaoan.</figcaption>
           </figure>
         </div>
       </section>
@@ -166,21 +118,67 @@
             </p>
             <div class="prose-body mt-6 space-y-5 text-muted">
               <p>
-                I'm building my skills through hands-on projects: writing HTML and CSS by hand, adding behaviour with JavaScript, and learning how real software gets planned, tested and shipped.
+                I like building things for the web and learning how real software gets made. I'm looking for an internship or entry-level role where I can keep learning.
               </p>
             </div>
 
-            <dl class="mt-10 max-w-[34rem] border-y-[3px] border-ink font-mono text-[0.9375rem]">
+            <dl class="mt-10 max-w-[34rem] border-y-[3px] border-ink tabular-nums text-[0.9375rem]">
               <div class="flex gap-4 py-3"><dt class="w-28 shrink-0 text-muted">Focus</dt><dd class="font-semibold">Software Developer</dd></div>
               <div class="flex gap-4 border-t-2 border-ink py-3"><dt class="w-28 shrink-0 text-muted">Learning</dt><dd class="font-semibold">JavaScript, Python, C++, Rust, Java</dd></div>
               <div class="flex gap-4 border-t-2 border-ink py-3"><dt class="w-28 shrink-0 text-muted">Location</dt><dd class="font-semibold">Matumbo, Pusok Lapu-Lapu City, Cebu City, Philippines, 6015</dd></div>
+              <div class="flex gap-4 border-t-2 border-ink py-3"><dt class="w-28 shrink-0 text-muted">Languages</dt><dd class="font-semibold">English, Tagalog</dd></div>
               <div class="flex gap-4 border-t-2 border-ink py-3"><dt class="w-28 shrink-0 text-muted">Status</dt><dd class="font-semibold">Open to work and internships</dd></div>
             </dl>
           </div>
 
-          <figure class="relative mx-auto w-full max-w-sm lg:col-span-5 lg:mx-0 lg:justify-self-end">
-            <img src="assets/images/profile.png" alt="Portrait of Christian A. Pidlaoan" width="400" height="500" class="photo photo-reveal relative z-10 aspect-[4/5] w-full rounded-md border-[3px] border-ink bg-ice object-cover" />
-            <figcaption class="caption mt-5">Christian A. Pidlaoan.</figcaption>
+          <!-- skills panel -->
+          <figure class="relative mx-auto w-full max-w-md lg:col-span-5 lg:mx-0 lg:justify-self-end">
+
+            <div class="panel p-5 sm:p-7">
+              <div class="flex items-center justify-between gap-3 border-b-2 border-ink pb-3 tabular-nums text-[0.8125rem]">
+                <span class="font-semibold">Skills</span>
+                <span class="flex items-center gap-2"><i class="inline-block size-2.5 rounded-full bg-secondary" aria-hidden="true"></i>Skills Used</span>
+              </div>
+
+              <ul class="mt-4 space-y-1">
+                <li>
+                  <details name="skill" class="skill" open>
+                    <summary class="skill-row" style="--level: 80%">
+                      <span>HTML</span><span class="skill-track"><span class="skill-bar"></span></span><span class="skill-pct">80%</span>
+                    </summary>
+                    <p class="skill-note">HTML: I build every page of this site by hand.</p>
+                  </details>
+                </li>
+                <li>
+                  <details name="skill" class="skill">
+                    <summary class="skill-row" style="--level: 70%">
+                      <span>CSS</span><span class="skill-track"><span class="skill-bar"></span></span><span class="skill-pct">70%</span>
+                    </summary>
+                    <p class="skill-note">CSS: layouts, colours and animations, with Tailwind.</p>
+                  </details>
+                </li>
+                <li>
+                  <details name="skill" class="skill">
+                    <summary class="skill-row" style="--level: 60%">
+                      <span>JavaScript</span><span class="skill-track"><span class="skill-bar"></span></span><span class="skill-pct">60%</span>
+                    </summary>
+                    <p class="skill-note">JavaScript: what my React and Tauri projects are written in.</p>
+                  </details>
+                </li>
+                <li>
+                  <details name="skill" class="skill">
+                    <summary class="skill-row" style="--level: 50%">
+                      <span>Python</span><span class="skill-track"><span class="skill-bar"></span></span><span class="skill-pct">50%</span>
+                    </summary>
+                    <p class="skill-note">Python: small command-line programs, like a quiz game.</p>
+                  </details>
+                </li>
+              </ul>
+            </div>
+
+            <figcaption class="caption mt-5 ">
+              Open a skill to read a note. The percentages are example values.
+            </figcaption>
           </figure>
         </div>
       </section>
@@ -190,27 +188,31 @@
         <div class="container-page">
           <div class="flex flex-wrap items-end justify-between gap-6">
             <h2 class="section-title">Projects</h2>
-            <p class="max-w-md text-muted">Three things I built. Click a screenshot to enlarge it.</p>
+            <p class="max-w-md text-muted">Three things I built. Click a screenshot to open it full size.</p>
           </div>
 
           <div class="mt-12 grid gap-6 lg:grid-cols-3">
 
             <article class="project reveal" style="--d: 0ms">
-              <div class="slider" data-slider aria-roledescription="carousel" aria-label="BNHS Learning Portal screenshots">
-                <button type="button" class="slider-stage" aria-label="Enlarge screenshot" title="Click to enlarge">
-                  <img class="slide" src="assets/images/projects/bnhs-home.png" alt="Student home page with the current lesson, library stats, announcements and recent files" data-caption="Home" width="1440" height="900" />
-                  <img class="slide" loading="lazy" src="assets/images/projects/bnhs-library.png" alt="Learning library with a term, week and lesson picker" data-caption="Library" width="1440" height="900" />
-                  <img class="slide" loading="lazy" src="assets/images/projects/bnhs-leaderboard.png" alt="Leaderboard page with a find-a-score search" data-caption="Leaderboard" width="1440" height="900" />
-                  <img class="slide" loading="lazy" src="assets/images/projects/bnhs-teacher-login.png" alt="Teacher sign-in form" data-caption="Teacher sign in" width="1440" height="900" />
-                </button>
-                <div class="slider-bar">
-                  <button type="button" class="slider-btn slider-prev" aria-label="Previous screenshot"><svg aria-hidden="true"><use href="#i-arrow-left" /></svg></button>
-                  <p class="slider-count" aria-live="polite"></p>
-                  <button type="button" class="slider-btn slider-next" aria-label="Next screenshot"><svg aria-hidden="true"><use href="#i-arrow-right" /></svg></button>
+              <div class="slider" data-ui role="region" aria-label="BNHS Learning Portal screenshots" tabindex="0">
+                <div class="slider-track">
+                  <a href="assets/images/projects/bnhs-home.png" class="slide-link" target="_blank" rel="noopener noreferrer" aria-label="Open Home screenshot full size in a new tab">
+                    <img class="slide" src="assets/images/projects/bnhs-home.png" alt="Student home page with the current lesson, library stats, announcements and recent files" width="1440" height="900" />
+                  </a>
+                  <a href="assets/images/projects/bnhs-library.png" class="slide-link" target="_blank" rel="noopener noreferrer" aria-label="Open Library screenshot full size in a new tab">
+                    <img class="slide" loading="lazy" src="assets/images/projects/bnhs-library.png" alt="Learning library with a term, week and lesson picker" width="1440" height="900" />
+                  </a>
+                  <a href="assets/images/projects/bnhs-leaderboard.png" class="slide-link" target="_blank" rel="noopener noreferrer" aria-label="Open Leaderboard screenshot full size in a new tab">
+                    <img class="slide" loading="lazy" src="assets/images/projects/bnhs-leaderboard.png" alt="Leaderboard page with a find-a-score search" width="1440" height="900" />
+                  </a>
+                  <a href="assets/images/projects/bnhs-teacher-login.png" class="slide-link" target="_blank" rel="noopener noreferrer" aria-label="Open Teacher sign in screenshot full size in a new tab">
+                    <img class="slide" loading="lazy" src="assets/images/projects/bnhs-teacher-login.png" alt="Teacher sign-in form" width="1440" height="900" />
+                  </a>
                 </div>
+                <p class="slider-hint">4 screenshots. Swipe or scroll sideways.</p>
               </div>
               <div class="flex flex-1 flex-col gap-3 p-5">
-                <div class="flex items-start justify-between gap-3">
+                <div class="flex flex-col items-start gap-2">
                   <h3 class="text-2xl leading-tight">BNHS Learning Portal</h3>
                   <span class="chip chip-sheet shrink-0">Private repo</span>
                 </div>
@@ -220,28 +222,26 @@
                   <li class="chip chip-pink">Fastify</li>
                   <li class="chip chip-sky">SQLite</li>
                 </ul>
-                <button type="button" class="btn btn-primary mt-auto self-start" data-project="0">
-                  View details
-                  <svg aria-hidden="true"><use href="#i-arrow-up-right" /></svg>
-                </button>
               </div>
             </article>
 
             <article class="project reveal" style="--d: 80ms">
-              <div class="slider" data-slider aria-roledescription="carousel" aria-label="Rent a Room PH screenshots">
-                <button type="button" class="slider-stage" aria-label="Enlarge screenshot" title="Click to enlarge">
-                  <img class="slide" src="assets/images/projects/rent-a-room-dashboard.png" alt="Dashboard with occupancy stats, bills summary, recent activity and active units" data-caption="Dashboard" width="1415" height="1600" />
-                  <img class="slide" loading="lazy" src="assets/images/projects/rent-a-room-rooms.png" alt="Room management table with tenants, status and rent" data-caption="Rooms" width="1315" height="1600" />
-                  <img class="slide" loading="lazy" src="assets/images/projects/rent-a-room-payments.png" alt="Payments dashboard with the billing cycle and payment history" data-caption="Payments" width="1581" height="1600" />
-                </button>
-                <div class="slider-bar">
-                  <button type="button" class="slider-btn slider-prev" aria-label="Previous screenshot"><svg aria-hidden="true"><use href="#i-arrow-left" /></svg></button>
-                  <p class="slider-count" aria-live="polite"></p>
-                  <button type="button" class="slider-btn slider-next" aria-label="Next screenshot"><svg aria-hidden="true"><use href="#i-arrow-right" /></svg></button>
+              <div class="slider" data-ui role="region" aria-label="Rent a Room PH screenshots" tabindex="0">
+                <div class="slider-track">
+                  <a href="assets/images/projects/rent-a-room-dashboard.png" class="slide-link" target="_blank" rel="noopener noreferrer" aria-label="Open Dashboard screenshot full size in a new tab">
+                    <img class="slide" src="assets/images/projects/rent-a-room-dashboard.png" alt="Dashboard with occupancy stats, bills summary, recent activity and active units" width="1415" height="1600" />
+                  </a>
+                  <a href="assets/images/projects/rent-a-room-rooms.png" class="slide-link" target="_blank" rel="noopener noreferrer" aria-label="Open Rooms screenshot full size in a new tab">
+                    <img class="slide" loading="lazy" src="assets/images/projects/rent-a-room-rooms.png" alt="Room management table with tenants, status and rent" width="1315" height="1600" />
+                  </a>
+                  <a href="assets/images/projects/rent-a-room-payments.png" class="slide-link" target="_blank" rel="noopener noreferrer" aria-label="Open Payments screenshot full size in a new tab">
+                    <img class="slide" loading="lazy" src="assets/images/projects/rent-a-room-payments.png" alt="Payments dashboard with the billing cycle and payment history" width="1581" height="1600" />
+                  </a>
                 </div>
+                <p class="slider-hint">3 screenshots. Swipe or scroll sideways.</p>
               </div>
               <div class="flex flex-1 flex-col gap-3 p-5">
-                <div class="flex items-start justify-between gap-3">
+                <div class="flex flex-col items-start gap-2">
                   <h3 class="text-2xl leading-tight">Rent a Room PH</h3>
                   <span class="chip chip-sheet shrink-0">Public repo</span>
                 </div>
@@ -250,28 +250,30 @@
                   <li class="chip chip-lime">React</li>
                   <li class="chip chip-pink">Firebase</li>
                 </ul>
-                <button type="button" class="btn btn-primary mt-auto self-start" data-project="1">
-                  View details
-                  <svg aria-hidden="true"><use href="#i-arrow-up-right" /></svg>
-                </button>
+                <a href="https://github.com/sysdev-shan/rent-a-room-ph" class="btn btn-primary mt-auto self-start" target="_blank" rel="noopener noreferrer">
+                  View code
+                  <svg aria-hidden="true"><use href="#i-arrow-up-right" /></svg><span class="sr-only"> (opens in a new tab)</span>
+                </a>
               </div>
             </article>
 
             <article class="project reveal" style="--d: 160ms">
-              <div class="slider" data-slider aria-roledescription="carousel" aria-label="RAW Reader screenshots">
-                <button type="button" class="slider-stage" aria-label="Enlarge screenshot" title="Click to enlarge">
-                  <img class="slide" src="assets/images/projects/raw-library.png" alt="Library screen with series cards and unread counts" data-caption="Library" width="840" height="1600" />
-                  <img class="slide" loading="lazy" src="assets/images/projects/raw-browse.png" alt="Browse screen listing the sources" data-caption="Browse" width="840" height="1600" />
-                  <img class="slide" loading="lazy" src="assets/images/projects/raw-reader.png" alt="Reader screen with a page slider and chapter buttons" data-caption="Reader" width="840" height="1600" />
-                </button>
-                <div class="slider-bar">
-                  <button type="button" class="slider-btn slider-prev" aria-label="Previous screenshot"><svg aria-hidden="true"><use href="#i-arrow-left" /></svg></button>
-                  <p class="slider-count" aria-live="polite"></p>
-                  <button type="button" class="slider-btn slider-next" aria-label="Next screenshot"><svg aria-hidden="true"><use href="#i-arrow-right" /></svg></button>
+              <div class="slider" data-ui role="region" aria-label="RAW Reader screenshots" tabindex="0">
+                <div class="slider-track">
+                  <a href="assets/images/projects/raw-library.png" class="slide-link" target="_blank" rel="noopener noreferrer" aria-label="Open Library screenshot full size in a new tab">
+                    <img class="slide" src="assets/images/projects/raw-library.png" alt="Library screen with series cards and unread counts" width="840" height="1600" />
+                  </a>
+                  <a href="assets/images/projects/raw-browse.png" class="slide-link" target="_blank" rel="noopener noreferrer" aria-label="Open Browse screenshot full size in a new tab">
+                    <img class="slide" loading="lazy" src="assets/images/projects/raw-browse.png" alt="Browse screen listing the sources" width="840" height="1600" />
+                  </a>
+                  <a href="assets/images/projects/raw-reader.png" class="slide-link" target="_blank" rel="noopener noreferrer" aria-label="Open Reader screenshot full size in a new tab">
+                    <img class="slide" loading="lazy" src="assets/images/projects/raw-reader.png" alt="Reader screen with a page slider and chapter buttons" width="840" height="1600" />
+                  </a>
                 </div>
+                <p class="slider-hint">3 screenshots. Swipe or scroll sideways.</p>
               </div>
               <div class="flex flex-1 flex-col gap-3 p-5">
-                <div class="flex items-start justify-between gap-3">
+                <div class="flex flex-col items-start gap-2">
                   <h3 class="text-2xl leading-tight">RAW Reader</h3>
                   <span class="chip chip-sheet shrink-0">Public repo</span>
                 </div>
@@ -281,12 +283,78 @@
                   <li class="chip chip-pink">Rust</li>
                   <li class="chip chip-sky">JavaScript</li>
                 </ul>
-                <button type="button" class="btn btn-primary mt-auto self-start" data-project="2">
-                  View details
-                  <svg aria-hidden="true"><use href="#i-arrow-up-right" /></svg>
-                </button>
+                <a href="https://github.com/sysdev-shan/raw-manhwa-reader" class="btn btn-primary mt-auto self-start" target="_blank" rel="noopener noreferrer">
+                  View code
+                  <svg aria-hidden="true"><use href="#i-arrow-up-right" /></svg><span class="sr-only"> (opens in a new tab)</span>
+                </a>
               </div>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- experience -->
+      <section id="experience" class="relative overflow-x-clip border-t-[3px] border-ink py-20 lg:py-28">
+        <div class="container-page grid gap-12 lg:grid-cols-12 lg:gap-x-16">
+          <div class="lg:col-span-4">
+            <h2 class="section-title">Experience</h2>
+            <p class="lede mt-8">
+              Seven months in customer support, then a phone research contract.
+            </p>
+            <p class="mt-6 text-muted">
+              Most of my work so far has been helping people with digital products and writing down what went wrong so it could be fixed.
+            </p>
+          </div>
+
+          <div class="lg:col-span-8">
+            <ol class="space-y-6">
+              <li class="reveal">
+                <article class="panel lift grid gap-4 p-6 sm:grid-cols-[9.5rem_1fr] sm:gap-8 sm:p-8">
+                  <p class="tabular-nums font-semibold text-muted">May 2026 to Aug 2026</p>
+                  <div>
+                    <h3 class="text-2xl leading-tight">Phone Interviewer (Contract)</h3>
+                    <p class="mt-1 font-semibold">Dynata</p>
+                    <ul class="mt-4 list-disc space-y-2 pl-5 text-muted marker:text-ink">
+                      <li>Phoned respondents, asked the prepared survey questions and recorded every answer accurately for market research.</li>
+                      <li>Collected participants' feedback and documented their responses.</li>
+                    </ul>
+                  </div>
+                </article>
+              </li>
+              <li class="reveal" style="--d: 80ms">
+                <article class="panel lift grid gap-4 p-6 sm:grid-cols-[9.5rem_1fr] sm:gap-8 sm:p-8">
+                  <p class="tabular-nums font-semibold text-muted">Oct 2025 to Feb 2026</p>
+                  <div>
+                    <h3 class="text-2xl leading-tight">Customer Service Representative</h3>
+                    <p class="mt-1 font-semibold">Concentrix</p>
+                    <ul class="mt-4 list-disc space-y-2 pl-5 text-muted marker:text-ink">
+                      <li>Handled inbound support tickets and live chat for digital product issues: troubleshooting, walkthroughs and bug reports.</li>
+                      <li>Documented recurring bugs and glitches and sent structured reports to the technical team.</li>
+                      <li>Kept replies consistent with standard reply formats.</li>
+                    </ul>
+                  </div>
+                </article>
+              </li>
+              <li class="reveal" style="--d: 160ms">
+                <article class="panel lift grid gap-4 bg-primary p-6 sm:grid-cols-[9.5rem_1fr] sm:gap-8 sm:p-8">
+                  <p class="tabular-nums font-semibold">2022 to 2024</p>
+                  <div>
+                    <h3 class="text-2xl leading-tight">Computer Programming</h3>
+                    <p class="mt-1 font-semibold">Asian Learning Center Inc.</p>
+                    <p class="mt-4">Information Communication Technology. Overall Top 3 of the TVL Track.</p>
+                  </div>
+                </article>
+              </li>
+            </ol>
+
+            <ul class="mt-8 flex flex-wrap gap-2" aria-label="Areas of expertise">
+              <li class="chip chip-sheet">Ticket and helpdesk support</li>
+              <li class="chip chip-sheet">SOP documentation</li>
+              <li class="chip chip-sheet">Data entry and tracking</li>
+              <li class="chip chip-sheet">Google Workspace</li>
+              <li class="chip chip-sheet">MS Office</li>
+              <li class="chip chip-sheet">Windows and Linux</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -352,87 +420,73 @@
             </ul>
           </div>
 
-          <form id="contact-form" class="panel p-6 sm:p-8 lg:col-span-7" novalidate>
+          <form action="mailto:pidlaoanchristian2@gmail.com" method="post" enctype="text/plain" class="panel p-6 sm:p-8 lg:col-span-7">
             <div>
               <label for="name" class="field-label">Your name</label>
-              <input id="name" name="name" type="text" class="field" autocomplete="name" aria-describedby="name-error" required />
-              <p id="name-error" class="field-error" role="alert"></p>
+              <input id="name" name="name" type="text" class="field" autocomplete="name" required />
             </div>
             <div class="mt-2">
               <label for="email" class="field-label">Email address</label>
-              <input id="email" name="email" type="email" class="field" autocomplete="email" inputmode="email" aria-describedby="email-error" required />
-              <p id="email-error" class="field-error" role="alert"></p>
+              <input id="email" name="email" type="email" class="field" autocomplete="email" inputmode="email" required />
             </div>
             <div class="mt-2">
               <label for="message" class="field-label">Message</label>
-              <textarea id="message" name="message" rows="5" class="field resize-y" aria-describedby="message-error" required></textarea>
-              <p id="message-error" class="field-error" role="alert"></p>
+              <textarea id="message" name="message" rows="5" class="field resize-y" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary mt-4 w-full sm:w-auto">
               Send message
               <svg aria-hidden="true"><use href="#i-send" /></svg>
             </button>
+            <p class="caption mt-4">Sending opens your email app with the message filled in.</p>
           </form>
         </div>
       </section>
     </main>
 
     <!-- footer -->
-    <footer class="on-ink border-t-[3px] border-ink bg-ink text-paper">
-      <div class="container-page flex flex-wrap items-center justify-between gap-4 py-8">
-        <p class="text-base">&copy; <span id="year">2026</span> Christian A. Pidlaoan. Built by hand with HTML, Tailwind and JavaScript.</p>
-        <a href="#top" class="btn btn-primary">
-          <svg aria-hidden="true"><use href="#i-arrow-up" /></svg>
-          Back to top
-        </a>
-      </div>
-    </footer>
+    <footer class="on-ink bg-ink text-paper">
+      <div class="container-page grid gap-12 py-16 lg:grid-cols-12 lg:gap-x-16 lg:py-20">
+        <div class="lg:col-span-6">
+          <h2 class="font-display text-4xl leading-tight text-paper sm:text-5xl">Let's build something together.</h2>
+          <p class="mt-5 max-w-md text-paper/80">Open to work and internships. Send me a message and I'll reply as soon as I can.</p>
+          <a href="mailto:pidlaoanchristian2@gmail.com" class="btn btn-primary mt-8">
+            <svg aria-hidden="true"><use href="#i-mail" /></svg>
+            Email me
+          </a>
+        </div>
 
-    <!-- dialogs -->
-    <dialog id="project-modal" class="m-auto w-[min(34rem,calc(100%-2.5rem))] rounded-md border-[3px] border-ink bg-sheet p-0 shadow-hard-lg" aria-labelledby="project-title">
-      <div class="flex items-start justify-between gap-4 border-b-[3px] border-ink bg-primary p-5">
-        <h2 id="project-title" class="text-2xl leading-tight"></h2>
-        <button type="button" class="icon-btn shrink-0 bg-sheet" data-close aria-label="Close project details">
-          <svg class="size-6" aria-hidden="true"><use href="#i-x" /></svg>
-        </button>
+        <nav class="grid grid-cols-2 gap-8 lg:col-span-6" aria-label="Footer">
+          <div>
+            <p class="font-extrabold text-primary">Explore</p>
+            <ul class="mt-4 space-y-1">
+              <li><a href="#about" class="footer-link">About</a></li>
+              <li><a href="#projects" class="footer-link">Projects</a></li>
+              <li><a href="#experience" class="footer-link">Experience</a></li>
+              <li><a href="#skills" class="footer-link">Skills</a></li>
+              <li><a href="#contact" class="footer-link">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-extrabold text-primary">Connect</p>
+            <ul class="mt-4 space-y-1">
+              <li><a href="https://github.com/sysdev-shan" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in a new tab)</span></a></li>
+              <li><a href="https://www.linkedin.com/in/christian-pidlaoan-7ba35b338/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a></li>
+              <li><a href="mailto:pidlaoanchristian2@gmail.com" class="footer-link">Email</a></li>
+              <li><a href="assets/docs/christian-pidlaoan-resume.pdf" class="footer-link" download>Download CV</a></li>
+            </ul>
+          </div>
+        </nav>
       </div>
-      <div class="space-y-5 p-6">
-        <p id="project-desc" class="text-muted"></p>
-        <ul id="project-tags" class="flex flex-wrap gap-2" aria-label="Technologies"></ul>
-        <div class="flex flex-wrap gap-3">
-          <a id="project-live" href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Live demo<svg aria-hidden="true"><use href="#i-arrow-up-right" /></svg></a>
-          <a id="project-code" href="#" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Source code<svg aria-hidden="true"><use href="#i-github" /></svg></a>
+
+      <div class="bg-paper/10">
+        <div class="container-page flex flex-wrap items-center justify-between gap-x-6 gap-y-3 py-5 text-[0.9375rem]">
+          <p>&copy; <span id="year">2026</span> Christian A. Pidlaoan. Lapu-Lapu City, Cebu, Philippines.</p>
+          <a href="#top" class="footer-link inline-flex items-center gap-2">
+            Back to top
+            <svg class="size-4" aria-hidden="true"><use href="#i-arrow-up" /></svg>
+          </a>
         </div>
       </div>
-    </dialog>
-
-    <dialog id="zoom-modal" class="m-auto w-[min(72rem,calc(100%-1.5rem))] rounded-md border-[3px] border-ink bg-sheet p-0 shadow-hard-lg" aria-labelledby="zoom-title">
-      <div class="flex items-center justify-between gap-4 border-b-[3px] border-ink bg-primary px-5 py-3">
-        <h2 id="zoom-title" class="text-xl leading-tight"></h2>
-        <button type="button" class="icon-btn shrink-0 bg-sheet" data-close aria-label="Close enlarged screenshot">
-          <svg class="size-6" aria-hidden="true"><use href="#i-x" /></svg>
-        </button>
-      </div>
-      <div class="flex justify-center overflow-auto bg-paper-2 p-4">
-        <img id="zoom-img" class="block h-auto max-h-[75dvh] w-auto max-w-full border-[3px] border-ink bg-sheet" alt="" />
-      </div>
-    </dialog>
-
-    <dialog id="success-modal" class="m-auto w-[min(28rem,calc(100%-2.5rem))] rounded-md border-[3px] border-ink bg-sheet p-0 shadow-hard-lg" aria-labelledby="success-title">
-      <div class="space-y-4 p-7">
-        <h2 id="success-title" class="text-3xl">Message sent</h2>
-        <p class="text-muted">Thanks, <span id="success-name"></span>. I'll get back to you soon.</p>
-        <button type="button" class="btn btn-primary" data-close>Close</button>
-      </div>
-    </dialog>
-  
-    <script src="src/js/page.js" defer></script>
-    <script src="src/js/menu.js" defer></script>
-    <script src="src/js/reveal.js" defer></script>
-    <script src="src/js/skills.js" defer></script>
-    <script src="src/js/copy.js" defer></script>
-    <script src="src/js/slider.js" defer></script>
-    <script src="src/js/projects.js" defer></script>
-    <script src="src/js/form.js" defer></script>
+    </footer>
   </body>
 </html>

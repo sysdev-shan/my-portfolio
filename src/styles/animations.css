@@ -10,7 +10,7 @@
 
 @keyframes wipe {
   from {
-    background-size: 0% 0.42em;
+    clip-path: inset(0 100% 0 0);
   }
 }
 
@@ -20,10 +20,10 @@
   }
 }
 
-@keyframes dialog-in {
+@keyframes photo-in {
   from {
     opacity: 0;
-    transform: translateY(16px) scale(0.97);
+    transform: translateY(32px);
   }
 }
 
@@ -39,36 +39,64 @@
   animation: grow 900ms var(--ease-out-expo) 500ms both;
 }
 
-/* scroll reveal (reveal.js adds "is-visible") */
-.js .reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 600ms var(--ease-out-expo), transform 600ms var(--ease-out-expo);
-  transition-delay: var(--d, 0ms);
-}
-.js .reveal.is-visible {
-  opacity: 1;
-  transform: none;
+/* scroll reveal: browsers with scroll-driven animations fade each block in as it enters */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: rise linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+  }
 }
 
 /* profile photo */
-.photo {
-  transform: rotate(-1deg);
-  box-shadow: var(--shadow-hard-lg);
-}
-.js .photo-reveal {
-  transition: opacity 500ms var(--ease-out-expo), transform 800ms var(--ease-out-expo),
-    box-shadow 800ms var(--ease-out-expo) 160ms;
-}
-.js .photo-reveal:not(.is-visible) {
-  opacity: 0;
-  transform: translateY(32px) rotate(-7deg);
-  box-shadow: 0 0 0 0 var(--color-ink);
+.photo-reveal {
+  animation: photo-in 900ms var(--ease-out-expo) 250ms both;
 }
 
-/* dialogs */
-dialog[open] {
-  animation: dialog-in 260ms var(--ease-out-expo);
+/* light life: float, pulse, hover */
+@keyframes float {
+  50% {
+    transform: translateY(-8px);
+  }
+}
+@keyframes pulse {
+  50% {
+    transform: scale(1.5);
+    opacity: 0.55;
+  }
+}
+
+.float {
+  animation: float 6s ease-in-out 1.2s infinite;
+}
+.float img {
+  transition: transform 500ms var(--ease-out-expo);
+}
+.float:hover img {
+  transform: scale(1.02) rotate(-1deg);
+}
+.pulse-dot {
+  animation: pulse 2.2s ease-in-out infinite;
+}
+.slide {
+  transition: transform 400ms var(--ease-out-expo);
+}
+.slide-link:hover .slide {
+  transform: scale(1.03);
+}
+.lift {
+  transition: transform 250ms var(--ease-out-expo);
+}
+.chip {
+  transition: transform 200ms var(--ease-out-expo);
+}
+.chip:hover {
+  transform: translateY(-2px);
+}
+@media (hover: hover) {
+  .lift:hover {
+    transform: translateY(-4px);
+  }
 }
 
 /* no motion if the user turned animations off */
@@ -79,23 +107,16 @@ dialog[open] {
   .intro,
   .hl-wipe,
   .skill-bar,
-  dialog[open] {
+  .reveal,
+  .photo-reveal,
+  .float,
+  .pulse-dot {
     animation: none;
   }
-  .js .reveal,
-  .js .photo-reveal {
-    opacity: 1;
-    transition: none;
-  }
-  .js .reveal {
-    transform: none;
-  }
-  .js .photo-reveal,
-  .js .photo-reveal:not(.is-visible) {
-    opacity: 1;
-    transform: rotate(-1deg);
-    box-shadow: var(--shadow-hard-lg);
-  }
+  .slide,
+  .lift,
+  .chip,
+  .float img,
   .btn,
   .project,
   .social-link {

@@ -1,25 +1,24 @@
 /* colours, fonts, shadows */
 @theme {
-  --color-paper: #f6f3ea;
-  --color-paper-2: #ece7d8;
-  --color-sheet: #fffdf7;
-  --color-ink: #16120d;
+  --color-paper: #f1f1ee;
+  --color-paper-2: #e3e4df;
+  --color-sheet: #ffffff;
+  --color-ink: #14161a;
   --color-primary: #e0ff20; /* lime */
   --color-secondary: #fe5a08; /* orange, buttons */
   --color-rust: #a63a0a; /* darker orange for text */
   --color-blush: #ffadde;
   --color-ice: #a4e8ff;
   /* secondary text */
-  --color-muted: #3d372e;
+  --color-muted: #3a3e44;
   --color-error: #b4150a;
 
   --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
   --font-sans: "Hanken Grotesk", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  --shadow-hard-sm: 3px 3px 0 0 var(--color-ink);
-  --shadow-hard: 6px 6px 0 0 var(--color-ink);
-  --shadow-hard-lg: 9px 9px 0 0 var(--color-ink);
+  --shadow-hard-sm: 0 0 #0000;
+  --shadow-hard: 0 0 #0000;
+  --shadow-hard-lg: 0 0 #0000;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 
